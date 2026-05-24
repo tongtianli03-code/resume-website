@@ -1179,12 +1179,35 @@ body {
   gap: 28px;
   padding: 54px 0 80px;
   text-align: center;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 34px;
+  left: 50%;
+  z-index: -1;
+  width: min(720px, 82vw);
+  height: 118px;
+  transform: translateX(-50%);
+  border-top: 1px solid rgba(36, 111, 143, 0.18);
+  border-bottom: 1px solid rgba(36, 111, 143, 0.12);
+  background:
+    linear-gradient(90deg, rgba(36,111,143,0.16) 0 1px, transparent 1px 100%),
+    linear-gradient(180deg, rgba(36,111,143,0.12) 0 1px, transparent 1px 100%);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+  pointer-events: none;
 }
 
 .hero-copy {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  width: 100%;
 }
 
 .hero-badge {
@@ -1201,21 +1224,39 @@ body {
 .hero-name {
   max-width: 850px;
   font-size: clamp(58px, 8vw, 112px);
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   line-height: .92;
   margin-bottom: 18px;
 }
 
+.hero-manifesto {
+  width: min(980px, 100%);
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.16;
+  color: var(--ink);
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.hero-manifesto span {
+  display: inline;
+  background: linear-gradient(180deg, transparent 60%, rgba(36, 111, 143, 0.18) 60%);
+}
+
 .hero-role {
-  max-width: 560px;
+  width: min(640px, 100%);
   margin-bottom: 16px;
   font-size: 15px;
   line-height: 1.75;
   color: rgba(11, 13, 15, 0.62);
+  text-wrap: pretty;
 }
 
 .hero-summary {
-  max-width: 560px;
+  width: min(560px, 100%);
   padding: 14px 18px;
   border-radius: 18px;
   border-color: rgba(255,255,255,0.58);
@@ -1231,6 +1272,72 @@ body {
   font-size: 12px;
   line-height: 1.65;
   color: rgba(11, 13, 15, 0.58);
+}
+
+.concept-flow {
+  width: min(650px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr) 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 0;
+  margin: 18px auto 0;
+}
+
+.concept-node {
+  position: relative;
+  min-height: 64px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 20px;
+  background: rgba(248,251,253,0.58);
+  text-align: left;
+}
+
+.concept-node::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(36, 111, 143, 0.72);
+}
+
+.concept-node span {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(11,13,15,0.42);
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.concept-node strong {
+  display: block;
+  color: rgba(11,13,15,0.78);
+  font-size: 14px;
+  line-height: 1.28;
+}
+
+.concept-line {
+  position: relative;
+  height: 1px;
+  background: rgba(36, 111, 143, 0.32);
+}
+
+.concept-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -1px;
+  width: 7px;
+  height: 7px;
+  transform: translateY(-50%) rotate(45deg);
+  border-top: 1px solid rgba(36, 111, 143, 0.62);
+  border-right: 1px solid rgba(36, 111, 143, 0.62);
 }
 
 .hero-actions {
@@ -1352,7 +1459,7 @@ body {
 
 .stat-number {
   font-size: 42px;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 
 .now-section {
@@ -1434,7 +1541,7 @@ body {
 }
 
 .section-title {
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   font-size: clamp(42px, 5vw, 72px);
 }
 
@@ -1518,7 +1625,7 @@ body {
 
 .timeline-company {
   font-size: 30px;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .timeline-date {
@@ -1599,6 +1706,16 @@ body {
     padding: 34px 0 56px;
   }
 
+  .hero::before {
+    top: 24px;
+    width: min(620px, 88vw);
+    height: 104px;
+  }
+
+  .hero-manifesto {
+    font-size: 32px;
+  }
+
   .hero-panel {
     order: 0;
   }
@@ -1672,8 +1789,33 @@ body {
     font-size: 54px;
   }
 
+  .hero-manifesto {
+    font-size: 25px;
+    letter-spacing: 0;
+  }
+
   .hero-role {
     font-size: 14px;
+  }
+
+  .concept-flow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: min(320px, 100%);
+  }
+
+  .concept-line {
+    width: 1px;
+    height: 18px;
+    margin: 0 auto;
+  }
+
+  .concept-line::after {
+    top: auto;
+    right: auto;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%) rotate(135deg);
   }
 
   .journey-card {
@@ -1788,10 +1930,18 @@ body {
       <div class="hero-copy">
         <div class="hero-badge reveal"><span class="dot"></span>支付宝/字节渠道KA行业运营</div>
         <h1 class="hero-name reveal">童天立</h1>
+        <p class="hero-manifesto reveal"><span>把模糊的业务问题，做成真实可用的 AI NATIVE，</span></p>
         <p class="hero-role reveal">我帮助<em>商业广告与渠道生态团队</em>，用 AI 工作流、行业运营方法论和代理协同能力，做出可复用的增长机制与流程提效结果。</p>
         <div class="hero-summary reveal">
           <strong>Current Focus</strong>
           <span>现在关注 AI 领域的业务应用、商业广告运营相关机会，也欢迎各类商业化流程提效合作。</span>
+        </div>
+        <div class="concept-flow reveal" aria-label="从业务问题到 AI Native 落地的路径">
+          <div class="concept-node"><span>Input</span><strong>模糊业务问题</strong></div>
+          <div class="concept-line" aria-hidden="true"></div>
+          <div class="concept-node"><span>Workflow</span><strong>AI 工作流</strong></div>
+          <div class="concept-line" aria-hidden="true"></div>
+          <div class="concept-node"><span>Output</span><strong>真实可用结果</strong></div>
         </div>
         <div class="hero-actions reveal">
           <a class="text-btn primary" href="#experience">
