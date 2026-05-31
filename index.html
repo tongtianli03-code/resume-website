@@ -1208,6 +1208,7 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
+  max-width: 620px;
 }
 
 .hero-badge {
@@ -1253,6 +1254,8 @@ body {
   line-height: 1.75;
   color: rgba(11, 13, 15, 0.62);
   text-wrap: pretty;
+  overflow-wrap: anywhere;
+  word-break: break-all;
 }
 
 .hero-summary {
@@ -1262,6 +1265,7 @@ body {
   border-color: rgba(255,255,255,0.58);
   background: rgba(248,251,253,0.58);
   box-shadow: none;
+  box-sizing: border-box;
 }
 
 .hero-summary strong {
@@ -1269,9 +1273,12 @@ body {
 }
 
 .hero-summary span {
+  display: block;
   font-size: 12px;
   line-height: 1.65;
   color: rgba(11, 13, 15, 0.58);
+  overflow-wrap: anywhere;
+  word-break: break-all;
 }
 
 .concept-flow {
@@ -1774,11 +1781,17 @@ body {
   }
 
   .brand span:last-child {
-    display: inline;
+    display: none;
   }
 
   .nav-actions .text-btn.primary {
-    padding: 0 13px;
+    width: 42px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .nav-actions .text-btn.primary svg {
+    margin: 0;
   }
 
   .hero {
@@ -1914,9 +1927,9 @@ body {
         <a class="icon-btn" href="mailto:976738548@qq.com" aria-label="发送邮件">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
         </a>
-        <a class="text-btn primary" href="resume-dossier-a4-2page.html">
+        <a class="text-btn primary" href="resume-commercial-ai-product-2page.pdf" aria-label="下载简历">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-          双页简历
+          下载简历
         </a>
         <a class="icon-btn mobile-menu" href="#contact" aria-label="联系方式">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
@@ -1928,13 +1941,13 @@ body {
   <main id="top" class="page-shell">
     <section class="hero">
       <div class="hero-copy">
-        <div class="hero-badge reveal"><span class="dot"></span>支付宝/字节渠道KA行业运营</div>
+        <div class="hero-badge reveal"><span class="dot"></span>AI 商业化应用 / 广告策略产品</div>
         <h1 class="hero-name reveal">童天立</h1>
         <p class="hero-manifesto reveal"><span>把模糊的业务问题，做成真实可用的 AI NATIVE，</span></p>
-        <p class="hero-role reveal">我帮助<em>商业广告与渠道生态团队</em>，用 AI 工作流、行业运营方法论和代理协同能力，做出可复用的增长机制与流程提效结果。</p>
+        <p class="hero-role reveal">我面向<em>商业广告与渠道生态团队</em>，<br>把投放诊断、代理服务和培训认证，<br>沉淀为 AI Copilot 与自动化工作流。</p>
         <div class="hero-summary reveal">
           <strong>Current Focus</strong>
-          <span>现在关注 AI 领域的业务应用、商业广告运营相关机会，也欢迎各类商业化流程提效合作。</span>
+          <span>关注 AI 商业化应用、广告策略产品<br>和运营工作流提效机会。</span>
         </div>
         <div class="concept-flow reveal" aria-label="从业务问题到 AI Native 落地的路径">
           <div class="concept-node"><span>Input</span><strong>模糊业务问题</strong></div>
@@ -2004,23 +2017,23 @@ body {
           <div class="section-label">Now / Currently</div>
           <h2 class="section-title">现在关注</h2>
         </div>
-        <p class="section-copy">我正在把 AI 应用、广告运营经验和自动化工作流连接起来，寻找能把复杂商业化流程做轻、做快、做可复制的机会。</p>
+        <p class="section-copy">我正在把广告运营经验、代理生态方法论和 AI 工作流连接起来，寻找能把复杂商业化流程做轻、做快、做可复制的机会。</p>
       </div>
       <div class="now-grid">
         <article class="now-card">
           <span>AI Application</span>
-          <strong>AI 业务应用落地</strong>
-          <p>关注 AI 在学习平台、内容生产、数据分析、运营问答和代理服务中的实际应用。</p>
+          <strong>AI 商业化应用落地</strong>
+          <p>关注 AI 在培训认证、投放诊断、运营问答、知识库和代理服务中的实际应用。</p>
         </article>
         <article class="now-card">
           <span>Commercial Ads</span>
-          <strong>商业广告运营机会</strong>
-          <p>开放渠道生态、行业运营、广告产品运营与客户增长相关机会，尤其适合广告商业化场景。</p>
+          <strong>广告策略产品机会</strong>
+          <p>开放广告策略产品、渠道生态、行业运营与客户增长相关机会，尤其适合广告商业化场景。</p>
         </article>
         <article class="now-card">
           <span>Efficiency</span>
           <strong>商业化流程提效合作</strong>
-          <p>欢迎围绕 SOP 沉淀、培训体系、数据复盘、代理协同和自动化工具建设展开合作。</p>
+          <p>欢迎围绕 SOP 沉淀、培训体系、数据复盘、代理协同、知识库和自动化工具建设展开合作。</p>
         </article>
       </div>
     </section>
@@ -2038,28 +2051,28 @@ body {
           <div class="profile-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
-          <h3>项目管理经验丰富</h3>
-          <p>9年媒体+甲方复合经验，整合广告公司/客户业务/媒体资源，制定目标方案并推动落地</p>
+          <h3>广告商业化策略</h3>
+          <p>9年媒体+甲方广告商业化经验，熟悉投放诊断、代理生态、行业运营、客户增长与产研协同</p>
         </article>
         <article class="profile-card reveal">
           <div class="profile-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
           </div>
-          <h3>解决方案专家</h3>
+          <h3>培训认证与行业方法论</h3>
           <p>内部巨量学认证讲师，输出 <span class="num">10+行业SOP手册</span>，培训覆盖 <span class="num">400+人次</span></p>
         </article>
         <article class="profile-card reveal">
           <div class="profile-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3>AI 赋能运营</h3>
-          <p>Claude Code / Codex 驱动策略分析、SOP沉淀与内容生产，<span class="num">3+行业全链路运营</span>经验，<span class="num">支付宝 AI 应用讲师</span></p>
+          <h3>AI 工作流落地</h3>
+          <p>使用 Claude Code / Codex 将运营场景拆解为知识库、Prompt 流程、自动化脚本和轻量 MVP</p>
         </article>
       </div>
       <div class="workflow-band">
         <div class="workflow-story reveal">
           <h3>从运营问题到 AI 工作流</h3>
-          <p>围绕认证、行业运营、代理服务与内容生产场景，将高频问题、策略分析、SOP 文档和数据复盘沉淀为可复用的工具链，缩短从需求分析到代码落地的路径。</p>
+          <p>围绕认证、行业运营、代理服务与内容生产场景，将高频问题、策略分析、SOP 文档和数据复盘沉淀为可复用的工具链，缩短从业务问题到可验证原型的路径。</p>
         </div>
         <div class="workflow-steps">
           <div class="workflow-step reveal">
@@ -2084,7 +2097,7 @@ body {
           <div class="section-label">Experience</div>
           <h2 class="section-title">工作经历</h2>
         </div>
-        <p class="section-copy">从甲方投放优化到媒体商业化，再到支付宝广告生态，经历覆盖行业运营、代理经营、产研协同、认证体系与 AI 学习平台规划。</p>
+        <p class="section-copy">从甲方投放优化到媒体商业化，再到支付宝广告生态，经历覆盖行业运营、代理经营、产研协同、认证体系与 AI 学习平台原型。</p>
       </div>
 
       <div class="timeline">
@@ -2099,15 +2112,15 @@ body {
           <div class="timeline-cards">
             <div class="timeline-card wide">
               <div class="timeline-card-header">
-                <span class="timeline-card-title">广告优化师认证体系建设与 AI 学习平台规划</span>
+                <span class="timeline-card-title">广告优化师认证体系建设与 AI 学习中心原型</span>
                 <span class="timeline-card-tag">CERTIFICATION &amp; AI</span>
               </div>
               <ul>
                 <li>负责支付宝广告优化师认证一期项目规划、训练营运营与数据复盘，覆盖 <span class="num">60+ 代理商</span>、<span class="num">500+ 注册学员</span>，推动近 <span class="num">400 人参考</span>、<span class="num">300+ 人通过</span>，实现总目标完成率 <span class="num">205%</span>、整体通过率约 <span class="num">78%</span></li>
-                <li>搭建"课程学习 + 签到打卡 + 随堂测验 + 积分激励 + 认证考试 + 证书发放"完整认证闭环，通过代理商/个人/销售三维榜单提升项目透明度和运营抓手</li>
+                <li>搭建"课程学习 + 签到打卡 + 随堂测验 + 积分激励 + 认证考试 + 证书发放"完整闭环，并建立代理商/个人/销售三维榜单作为运营抓手</li>
                 <li>建立全链路转化漏斗和学习行为分析模型，定位 <span class="num">124 名</span>"有积分但未参考"用户为最大流失人群；验证训练营参与者通过率约 <span class="num">85%</span>，未参与者仅约 <span class="num">3%</span>，沉淀后续运营策略</li>
-                <li>基于复盘结论规划 AI 学习中心，覆盖 AI 课程生成、自动出题、模拟考试、错题定位、游戏化练习和证书发放，目标将课程上线周期由 <span class="num">2-3 周</span> 压缩至 <span class="num">天级</span></li>
-                <li>分析 <span class="num">41 家</span>代理商群聊高频问题，规划代理问题自动化机器人，优先覆盖加白/审核解读/掉量诊断/FAQ 回复等场景，预计覆盖 <span class="num">70%+</span> 高频请求、节省约 <span class="num">30 小时/月</span> 运营人力</li>
+                <li>基于复盘完成 AI 学习中心流程原型，覆盖课程生成、自动出题、模拟考试、错题定位和证书发放，将课程上线周期从 <span class="num">2-3 周</span> 压缩至 <span class="num">天级</span> 作为验证目标</li>
+                <li>分析 <span class="num">41 家</span>代理商群聊高频问题，沉淀问题分类、知识库字段、回复规则与人工兜底流程，按历史问题量测算可覆盖 <span class="num">70%+</span> 高频请求</li>
               </ul>
             </div>
             <div class="timeline-card">
@@ -2129,7 +2142,7 @@ body {
               <ul>
                 <li>汽车全域智投成本达成率 <span class="num">71%</span></li>
                 <li>金融代理消耗渗透率 <span class="num">85%</span></li>
-                <li>落地深转回传等 <span class="num">10+基建项目</span></li>
+                <li>落地深转回传等 <span class="num">10+广告基建项目</span></li>
               </ul>
             </div>
             <div class="timeline-card">
@@ -2138,8 +2151,8 @@ body {
                 <span class="timeline-card-tag">STANDARD</span>
               </div>
               <ul>
-                <li>输出SOP手册（覆盖 <span class="num">400+人</span>），沉淀汽车客户引入SOP → 引客效率提升 <span class="num">30%</span></li>
-                <li>制定大客保障/新客引入政策 → 行业建设效率加速</li>
+                <li>输出SOP手册覆盖 <span class="num">400+人</span>，沉淀汽车客户引入SOP → 引客效率提升 <span class="num">30%</span></li>
+                <li>制定大客保障/新客引入政策，提升重点客户引入和行业资源协同效率</li>
               </ul>
             </div>
             <div class="timeline-card">
@@ -2148,7 +2161,7 @@ body {
                 <span class="timeline-card-tag">RISK</span>
               </div>
               <ul>
-                <li>合规风控：预判高危客户并加白准入，客诉浓度与违规风险双控</li>
+                <li>合规风控：预判高危客户并推动准入管理，客诉浓度与违规风险双控</li>
                 <li>代理运营：明确业务定位整合资源，助代理构建支付宝广告生态经营能力</li>
               </ul>
             </div>
@@ -2238,17 +2251,17 @@ body {
           <div class="section-label">Skills</div>
           <h2 class="section-title">核心技能</h2>
         </div>
-        <p class="section-copy">以广告业务、行业运营、标准化方法论和 AI 工具应用为主轴，服务代理运营、客户增长、数据分析与内容生产。</p>
+        <p class="section-copy">以广告业务、行业运营、标准化方法论和 AI 工具应用为主轴，服务代理运营、客户增长、投放诊断与流程提效。</p>
       </div>
       <div class="skills-layout">
         <div class="skill-category reveal">
-          <h3>AI 工具应用（运营视角）</h3>
+          <h3>AI 工作流与 Copilot 原型</h3>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">Claude Code — AI 辅助策略分析与方案输出</span><span class="skill-value">熟练</span></div>
+            <div class="skill-item-header"><span class="skill-name">Claude Code — 运营工作流与策略分析</span><span class="skill-value">熟练</span></div>
             <div class="skill-bar"><div class="skill-fill accent" style="width:90%"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">Codex — 智能代码生成与自动化脚本</span><span class="skill-value">掌握</span></div>
+            <div class="skill-item-header"><span class="skill-name">Codex — 自动化脚本与轻量 MVP</span><span class="skill-value">掌握</span></div>
             <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
           </div>
           <div class="skill-item">
@@ -2256,11 +2269,11 @@ body {
             <div class="skill-bar"><div class="skill-fill accent" style="width:88%"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">AI SOP 生成 — 标准化文档与流程沉淀</span><span class="skill-value">熟练</span></div>
+            <div class="skill-item-header"><span class="skill-name">知识库结构设计 — 标准回复与人工兜底</span><span class="skill-value">熟练</span></div>
             <div class="skill-bar"><div class="skill-fill accent" style="width:92%"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">AI 竞品分析 — 市场情报与策略对比</span><span class="skill-value">掌握</span></div>
+            <div class="skill-item-header"><span class="skill-name">Prompt 流程设计 — 任务拆解与结果校验</span><span class="skill-value">掌握</span></div>
             <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
           </div>
           <div class="skill-item">
@@ -2300,9 +2313,9 @@ body {
         <span class="tag">Claude Code</span>
         <span class="tag">Codex</span>
         <span class="tag">AI 策略分析</span>
-        <span class="tag">AI SOP 生成</span>
+        <span class="tag">知识库结构设计</span>
         <span class="tag">AI 数据洞察</span>
-        <span class="tag">AI 竞品分析</span>
+        <span class="tag">Prompt 流程设计</span>
         <span class="tag">AI 内容生产</span>
         <span class="tag">巨量引擎</span>
         <span class="tag">广点通</span>
