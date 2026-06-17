@@ -2617,6 +2617,31 @@ const activeObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
 
 sections.forEach((section) => activeObserver.observe(section));
+
+const scrollToSection = (hash) => {
+  if (!hash || hash === '#') return;
+  const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (!target) return;
+  const navOffset = document.querySelector('.site-nav')?.offsetHeight || 0;
+  const targetTop = target.getBoundingClientRect().top + window.scrollY - navOffset - 18;
+  window.scrollTo({ top: Math.max(targetTop, 0), behavior: 'smooth' });
+};
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const hash = link.getAttribute('href');
+    if (!hash || !document.getElementById(decodeURIComponent(hash.slice(1)))) return;
+    event.preventDefault();
+    history.pushState(null, '', hash);
+    scrollToSection(hash);
+  });
+});
+
+window.addEventListener('load', () => {
+  if (window.location.hash) {
+    window.requestAnimationFrame(() => scrollToSection(window.location.hash));
+  }
+});
 </script>
 </body>
 </html>
