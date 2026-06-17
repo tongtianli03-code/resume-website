@@ -1566,6 +1566,7 @@ body {
 .skill-category,
 .mini-card,
 .contact-card,
+.portfolio-card,
 .workflow-story,
 .workflow-step {
   border-color: rgba(255,255,255,0.64);
@@ -1577,7 +1578,8 @@ body {
 .profile-card:hover,
 .timeline-card:hover,
 .skill-category:hover,
-.mini-card:hover {
+.mini-card:hover,
+.portfolio-card:hover {
   transform: translateY(-2px);
   border-color: rgba(255,255,255,0.9);
   box-shadow: 0 20px 48px rgba(47, 68, 80, 0.11);
@@ -1598,6 +1600,131 @@ body {
 .workflow-band {
   margin-top: 16px;
   gap: 16px;
+}
+
+.portfolio-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.36fr) minmax(260px, .74fr);
+  gap: 24px;
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.64);
+  border-radius: 28px;
+  background: rgba(248,251,253,0.62);
+}
+
+.portfolio-kicker {
+  margin-bottom: 12px;
+  color: rgba(11,13,15,0.46);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.portfolio-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.portfolio-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+.portfolio-status {
+  flex: 0 0 auto;
+  min-height: 28px;
+  padding: 0 11px;
+  border-radius: 999px;
+  background: rgba(223,232,238,0.92);
+  color: rgba(11,13,15,0.62);
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+}
+
+.portfolio-desc {
+  max-width: 720px;
+  color: rgba(11,13,15,0.58);
+  font-size: 15px;
+  line-height: 1.82;
+}
+
+.portfolio-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 22px;
+}
+
+.portfolio-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(223,232,238,0.72);
+  color: rgba(11,13,15,0.64);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.portfolio-points {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.portfolio-points li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.portfolio-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--highlight);
+}
+
+.portfolio-side {
+  display: grid;
+  gap: 12px;
+}
+
+.portfolio-metric {
+  min-height: 104px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(223,232,238,0.68);
+}
+
+.portfolio-metric strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.portfolio-metric span {
+  display: block;
+  color: rgba(11,13,15,0.56);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .workflow-story {
@@ -1752,7 +1879,8 @@ body {
 
   .section-head,
   .workflow-band,
-  .contact-card {
+  .contact-card,
+  .portfolio-card {
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -1897,9 +2025,19 @@ body {
   .profile-card,
   .skill-category,
   .mini-card,
-  .contact-card {
+  .contact-card,
+  .portfolio-card {
     padding: 18px;
     border-radius: 22px;
+  }
+
+  .portfolio-title-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .portfolio-status {
+    align-self: flex-start;
   }
 
   .contact-info,
@@ -1920,6 +2058,7 @@ body {
         <li><a href="#now">Now</a></li>
         <li><a href="#about">核心能力</a></li>
         <li><a href="#experience">工作经历</a></li>
+        <li><a href="#portfolio">作品集</a></li>
         <li><a href="#skills">核心技能</a></li>
         <li><a href="#contact">联系方式</a></li>
       </ul>
@@ -1957,9 +2096,9 @@ body {
           <div class="concept-node"><span>Output</span><strong>真实可用结果</strong></div>
         </div>
         <div class="hero-actions reveal">
-          <a class="text-btn primary" href="#experience">
+          <a class="text-btn primary" href="#portfolio">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-            查看经历
+            查看作品
           </a>
           <a class="text-btn" href="#contact">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.1 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L9 10.72a16 16 0 0 0 4.28 4.28l1.29-1.29a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>
@@ -2243,6 +2382,54 @@ body {
           </div>
         </article>
       </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Portfolio</div>
+          <h2 class="section-title">作品集</h2>
+        </div>
+        <p class="section-copy">除广告商业化与渠道生态经历外，我也在用 AI 工具链推进可交互产品原型，把业务诉求、用户流程、运营后台和发布验收连成完整闭环。</p>
+      </div>
+
+      <article class="portfolio-card reveal">
+        <div>
+          <div class="portfolio-kicker">WeChat Mini Program / AI Health Assistant</div>
+          <div class="portfolio-title-row">
+            <h3 class="portfolio-title">知宠健康 / 宠盟宠物管家</h3>
+            <span class="portfolio-status">体验版交付</span>
+          </div>
+          <p class="portfolio-desc">面向宠物主、健康顾问与平台运营方，搭建“宠物档案 - 症状补充 - 在线问诊 - 医生接诊 - 评价/提醒 - 后台运营”的健康咨询产品闭环。</p>
+          <div class="portfolio-badges" aria-label="项目关键词">
+            <span class="portfolio-badge">微信小程序</span>
+            <span class="portfolio-badge">AI 辅助问诊</span>
+            <span class="portfolio-badge">Node.js API</span>
+            <span class="portfolio-badge">React 管理后台</span>
+            <span class="portfolio-badge">WebSocket</span>
+            <span class="portfolio-badge">阿里云部署</span>
+          </div>
+          <ul class="portfolio-points">
+            <li>梳理宠物主、健康顾问、平台运营三方诉求，设计 V1.0 健康咨询主链路和医生接诊工作台。</li>
+            <li>覆盖首页、AI 助手、咨询、宠物档案、科普文章、医生入驻、后台审核与咨询管理等核心场景。</li>
+            <li>将 AI 定位为照护问答、症状信息整理、追问建议和医生接诊参考，避免替代诊断或治疗决策。</li>
+          </ul>
+        </div>
+        <aside class="portfolio-side" aria-label="项目成果">
+          <div class="portfolio-metric">
+            <strong>多端架构</strong>
+            <span>微信原生小程序、PC 医生工作台、React 管理后台与 Node.js API 协同。</span>
+          </div>
+          <div class="portfolio-metric">
+            <strong>运营闭环</strong>
+            <span>咨询状态机、图文补充、接单对话、健康日程、订单与企业套餐管理。</span>
+          </div>
+          <div class="portfolio-metric">
+            <strong>发布门禁</strong>
+            <span>JS/JSON 校验、Jest 测试、后台构建、PM2 health 与体验版上传追踪。</span>
+          </div>
+        </aside>
+      </article>
     </section>
 
     <section class="section" id="skills">

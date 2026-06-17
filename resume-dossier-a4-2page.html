@@ -436,18 +436,105 @@ li::before {
   background: rgba(8, 121, 135, .58);
 }
 
-.page-2 .page-body { gap: 3.9mm; }
-.page-2 .top { grid-template-columns: 1fr auto; padding-bottom: 3mm; }
-.page-2 h1 { font-size: 18pt; }
-.page-2 .intro { max-width: 160mm; margin-top: 1.5mm; }
-.page-2 .mark { color: var(--accent); font: 800 21pt var(--font-display); }
-.page-2 .company-head { margin-bottom: 2mm; padding: 2.4mm 3.4mm; }
-.page-2 .exp-card { padding: 2.3mm 3.1mm; }
-.page-2 li { font-size: 6.2pt; line-height: 1.34; margin-bottom: 1mm; }
-.oppein li { font-size: 6.35pt; line-height: 1.34; }
+.page-2.sheet { padding-top: 7.6mm; padding-bottom: 5.4mm; }
+.page-2 .page-body { gap: 2.25mm; }
+.page-2 .top { grid-template-columns: 1fr auto; padding-bottom: 2mm; }
+.page-2 h1 { font-size: 16.8pt; }
+.page-2 .intro { max-width: 160mm; margin-top: 1mm; font-size: 6.8pt; }
+.page-2 .mark { color: var(--accent); font: 800 19pt var(--font-display); }
+.page-2 .section-head { margin-bottom: 1.8mm; }
+.page-2 .company-head { margin-bottom: 1.55mm; padding: 2mm 3mm; }
+.page-2 .company-name { font-size: 10pt; }
+.page-2 .company-role { font-size: 6.7pt; }
+.page-2 .date { font-size: 6.4pt; }
+.page-2 .cards-4 { gap: 2mm; }
+.page-2 .exp-card { padding: 1.9mm 2.6mm; }
+.page-2 .exp-card h3 { font-size: 7.6pt; margin-bottom: 1.6mm; }
+.page-2 li { font-size: 5.72pt; line-height: 1.25; margin-bottom: .65mm; }
+.oppein li { font-size: 5.85pt; line-height: 1.25; margin-bottom: .65mm; }
+
+.portfolio-mini {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 2mm;
+  padding: 2.2mm 2.8mm;
+}
+
+.portfolio-mini h3 {
+  margin-bottom: 1.2mm;
+}
+
+.portfolio-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 6.15pt;
+  line-height: 1.32;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 1.6mm;
+}
+
+.portfolio-tags span {
+  padding: .9mm 1.5mm;
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--accent);
+  font-size: 5.55pt;
+  font-weight: 800;
+}
+
+.portfolio-mini ul {
+  align-self: center;
+}
+
+.portfolio-mini li {
+  font-size: 5.65pt;
+  line-height: 1.22;
+  margin-bottom: .55mm;
+}
 
 .skill-card {
   padding: 2.6mm 3mm;
+}
+
+.page-2 .skill-card {
+  padding: 2mm 2.5mm;
+}
+
+.page-2 .skill-card h3,
+.page-2 .edu-card h3 {
+  font-size: 7.8pt;
+  margin-bottom: 1.6mm;
+}
+
+.page-2 .chip {
+  min-height: 14px;
+  padding: 1px 5px;
+  margin-bottom: .45mm;
+  font-size: 5.75pt;
+}
+
+.page-2 .bottom {
+  gap: 2mm;
+}
+
+.page-2 .edu-card {
+  padding: 2.2mm 2.7mm;
+}
+
+.page-2 .edu-card p,
+.page-2 .honors,
+.page-2 .interests {
+  font-size: 6.1pt;
+  line-height: 1.34;
+}
+
+.page-2 .interests {
+  margin-top: 1.2mm;
 }
 
 .chips {
@@ -738,6 +825,24 @@ li::before {
             <li>统筹品牌营销项目全周期落地，覆盖渠道任务分配、创意策略架构、页面转化设计及投放节奏管理。</li>
             <li>搭建投放全链路追踪体系，基于数据反馈持续优化成本、转化和投放规模。</li>
             <li>2017 下半年成本下降 <span class="num">22%</span>、投放量提升 <span class="num">323%</span>；2018 上半年成本下降 <span class="num">35%</span>、投放量平均提升 <span class="num">338%</span>。</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <div class="section-head"><h2>作品集｜宠物健康咨询小程序</h2><span>PORTFOLIO · AI MINI PROGRAM</span></div>
+        <article class="card portfolio-mini">
+          <div>
+            <h3>知宠健康 / 宠盟宠物管家</h3>
+            <p class="portfolio-meta">面向宠物主、健康顾问与平台运营方，搭建“宠物档案 - 症状补充 - 在线问诊 - 医生接诊 - 评价/提醒 - 后台运营”的健康咨询闭环。</p>
+            <div class="portfolio-tags">
+              <span>微信小程序</span><span>AI 辅助问诊</span><span>React 后台</span><span>Node.js API</span><span>WebSocket</span>
+            </div>
+          </div>
+          <ul>
+            <li>交付微信原生小程序、PC 医生工作台、React 管理后台与后端 API，覆盖咨询、档案、文章、医生入驻和后台审核场景。</li>
+            <li>将 AI 定位为照护问答、症状信息整理、追问建议和医生接诊参考，强调辅助记录与提醒边界。</li>
+            <li>建立 JS/JSON 校验、Jest 测试、后台构建、PM2 health 和体验版上传追踪等发布门禁。</li>
           </ul>
         </article>
       </section>
