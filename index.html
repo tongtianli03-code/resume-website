@@ -3,9 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="resume-build" content="2026-06-20-portfolio-live-v1">
-<title>童天立 — 个人简历网站</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="童天立｜9年广告商业化与渠道生态经验，专注 AI 自动化工作流搭建、广告策略产品与运营流程提效。">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#eef4f8">
+<meta name="resume-build" content="2026-07-19-resume-sync-v3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="童天立｜AI 自动化工作流与广告商业化">
+<meta property="og:description" content="把9年广告商业化经验沉淀为可复用的 AI 自动化工作流、Copilot 原型与运营闭环。">
+<meta property="og:url" content="https://tongtianli03-code.github.io/resume-website/">
+<link rel="canonical" href="https://tongtianli03-code.github.io/resume-website/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>童天立｜AI 自动化工作流与广告商业化</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #fafafa;
@@ -2083,6 +2093,212 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* 2026-07 recruiter scan pass */
+:where(a, summary):focus-visible {
+  outline: 3px solid rgba(36, 111, 143, 0.28);
+  outline-offset: 4px;
+}
+
+.timeline-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  margin: 4px 0 16px;
+  border: 1px solid rgba(255,255,255,0.68);
+  border-radius: 24px;
+  background: rgba(36,111,143,0.12);
+}
+
+.timeline-highlight {
+  min-width: 0;
+  padding: 18px 20px;
+  background: rgba(248,251,253,0.72);
+}
+
+.timeline-highlight + .timeline-highlight {
+  border-left: 1px solid rgba(36,111,143,0.12);
+}
+
+.timeline-highlight strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(21px, 2vw, 30px);
+  line-height: 1.12;
+}
+
+.timeline-highlight span {
+  color: rgba(11,13,15,0.54);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.experience-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  margin: 18px 0 8px;
+  border-top: 1px solid rgba(11,13,15,0.12);
+  border-bottom: 1px solid rgba(11,13,15,0.12);
+}
+
+.experience-project {
+  min-width: 0;
+  padding: 24px 22px 22px;
+}
+
+.experience-project + .experience-project {
+  border-left: 1px solid rgba(11,13,15,0.12);
+}
+
+.experience-project-kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--highlight);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.experience-project h3 {
+  margin-bottom: 9px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.experience-project > p {
+  color: rgba(11,13,15,0.58);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.experience-project-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 16px;
+}
+
+.experience-project-metric {
+  min-width: 92px;
+}
+
+.experience-project-metric strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.experience-project-metric span {
+  display: block;
+  color: rgba(11,13,15,0.48);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.experience-details {
+  margin-top: 10px;
+}
+
+.experience-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  padding: 0 4px;
+  border-top: 1px solid rgba(11,13,15,0.12);
+  color: rgba(11,13,15,0.62);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.experience-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.experience-details summary::after {
+  content: '＋';
+  color: var(--highlight);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.experience-details[open] summary::after {
+  content: '−';
+}
+
+.experience-details[open] .timeline-cards {
+  margin-top: 14px;
+}
+
+.skill-category .skill-item {
+  margin: 0;
+  padding: 13px 0;
+  border-top: 1px solid rgba(11,13,15,0.09);
+}
+
+.skill-category .skill-item-header {
+  align-items: center;
+  margin: 0;
+}
+
+.skill-category .skill-value {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(223,232,238,0.9);
+  color: rgba(11,13,15,0.58);
+}
+
+.contact-value[href] {
+  text-decoration: underline;
+  text-decoration-color: rgba(36,111,143,0.28);
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .timeline-highlights {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+  }
+
+  .timeline-highlight {
+    padding: 14px 16px;
+  }
+
+  .timeline-highlight + .timeline-highlight {
+    border-top: 1px solid rgba(36,111,143,0.12);
+    border-left: 0;
+  }
+
+  .experience-details summary {
+    min-height: 50px;
+  }
+
+  .experience-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-project {
+    padding: 20px 4px;
+  }
+
+  .experience-project + .experience-project {
+    border-top: 1px solid rgba(11,13,15,0.12);
+    border-left: 0;
+  }
+}
 </style>
 </head>
 <body>
@@ -2118,20 +2334,20 @@ body {
   <main id="top" class="page-shell">
     <section class="hero">
       <div class="hero-copy">
-        <div class="hero-badge reveal"><span class="dot"></span>AI 商业化应用 / 广告策略产品</div>
+        <div class="hero-badge reveal"><span class="dot"></span>AI 自动化工作流 / 广告商业化</div>
         <h1 class="hero-name reveal">童天立</h1>
-        <p class="hero-manifesto reveal"><span>把模糊的业务问题，做成真实可用的 AI NATIVE，</span></p>
-        <p class="hero-role reveal">我面向<em>商业广告与渠道生态团队</em>，<br>把投放诊断、代理服务和培训认证，<br>沉淀为 AI Copilot 与自动化工作流。</p>
+        <p class="hero-manifesto reveal"><span>把商业化经验，做成可复用的 AI 自动化工作流。</span></p>
+        <p class="hero-role reveal">面向<em>商业广告与渠道生态团队</em>，<br>从业务诊断、知识沉淀到轻量 MVP，<br>把高频运营动作变成可验证、可复制的工作流。</p>
         <div class="hero-summary reveal">
-          <strong>Current Focus</strong>
-          <span>关注 AI 商业化应用、广告策略产品<br>和运营工作流提效机会。</span>
+          <strong>Selected Impact</strong>
+          <span>自动化工作流覆盖运营团队 10% 重复性工作<br>上半年跟进 20 次产品上新 / 升级，推动 18 项平台产品上线</span>
         </div>
-        <div class="concept-flow reveal" aria-label="从业务问题到 AI Native 落地的路径">
-          <div class="concept-node"><span>Input</span><strong>模糊业务问题</strong></div>
+        <div class="concept-flow reveal" aria-label="从业务问题到 AI 自动化工作流落地的路径">
+          <div class="concept-node"><span>Input</span><strong>业务问题</strong></div>
           <div class="concept-line" aria-hidden="true"></div>
-          <div class="concept-node"><span>Workflow</span><strong>AI 工作流</strong></div>
+          <div class="concept-node"><span>Workflow</span><strong>自动化工作流</strong></div>
           <div class="concept-line" aria-hidden="true"></div>
-          <div class="concept-node"><span>Output</span><strong>真实可用结果</strong></div>
+          <div class="concept-node"><span>Output</span><strong>可验证结果</strong></div>
         </div>
         <div class="hero-actions reveal">
           <a class="text-btn primary" href="#portfolio">
@@ -2147,7 +2363,7 @@ body {
       <aside class="hero-panel reveal">
         <div class="visual-stack">
           <figure class="journey-card">
-            <img src="personal-journey.png" alt="童天立个人视觉照">
+            <img src="personal-journey.png" alt="童天立个人视觉照" decoding="async" fetchpriority="high">
             <figcaption class="journey-caption">
               <span>Personal Portrait</span>
               <strong>The Journey of Growth</strong>
@@ -2155,14 +2371,14 @@ body {
           </figure>
           <div class="side-portraits">
             <figure class="journey-card travel-card">
-              <img src="takamatsu-portrait.jpg" alt="童天立高松旅行照片">
+              <img src="takamatsu-portrait.jpg" alt="童天立高松旅行照片" loading="lazy" decoding="async">
               <figcaption class="journey-caption">
                 <span>Takamatsu 2024</span>
                 <strong>By the Sea</strong>
               </figcaption>
             </figure>
             <figure class="journey-card studio-card">
-              <img src="studio-portrait.png" alt="童天立白衬衫肖像">
+              <img src="studio-portrait.png" alt="童天立白衬衫肖像" loading="lazy" decoding="async">
               <figcaption class="journey-caption">
                 <span>Studio Portrait</span>
                 <strong>Focused Mode</strong>
@@ -2199,8 +2415,8 @@ body {
       <div class="now-grid">
         <article class="now-card">
           <span>AI Application</span>
-          <strong>AI 商业化应用落地</strong>
-          <p>关注 AI 在培训认证、投放诊断、运营问答、知识库和代理服务中的实际应用。</p>
+          <strong>AI 自动化工作流落地</strong>
+          <p>从岗位和工时盘点切入，把资料问答、数据盯盘、规则校验等高频任务做成可验证工作流。</p>
         </article>
         <article class="now-card">
           <span>Commercial Ads</span>
@@ -2221,48 +2437,48 @@ body {
           <div class="section-label">About</div>
           <h2 class="section-title">核心能力</h2>
         </div>
-        <p class="section-copy">从广告代理、客户业务、媒体资源到 AI 工具链，围绕目标拆解、策略制定、资源协同和落地复盘形成闭环。</p>
+        <p class="section-copy">从业务流程盘点、Agent 人机协同到投放产品落地，用效率基线和真实采用结果验证价值。</p>
       </div>
       <div class="profile-grid">
         <article class="profile-card reveal">
           <div class="profile-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
-          <h3>广告商业化策略</h3>
-          <p>9年媒体+甲方广告商业化经验，熟悉投放诊断、代理生态、行业运营、客户增长与产研协同</p>
+          <h3>业务流程盘点与效率基线</h3>
+          <p>盘点岗位、工时与使用日志，先找最耗时、最重复、业务边界最清楚的环节</p>
         </article>
         <article class="profile-card reveal">
           <div class="profile-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
           </div>
-          <h3>培训认证与行业方法论</h3>
-          <p>内部巨量学认证讲师，输出 <span class="num">10+行业SOP手册</span>，培训覆盖 <span class="num">400+人次</span></p>
+          <h3>Agent 工作流与人机协同</h3>
+          <p>把资料查询、数据盯盘和规则校验拆成可运行工作流，风险与执行动作保留人工确认</p>
         </article>
         <article class="profile-card reveal">
           <div class="profile-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3>AI 工作流落地</h3>
-          <p>使用 Claude Code / Codex 将运营场景拆解为知识库、Prompt 流程、自动化脚本和轻量 MVP</p>
+          <h3>投放产品与系统闭环</h3>
+          <p>从代理需求证据形成产品路线，补齐内测、上线、反馈回流与轻量 MVP 验证</p>
         </article>
       </div>
       <div class="workflow-band">
         <div class="workflow-story reveal">
-          <h3>从运营问题到 AI 工作流</h3>
-          <p>围绕认证、行业运营、代理服务与内容生产场景，将高频问题、策略分析、SOP 文档和数据复盘沉淀为可复用的工具链，缩短从业务问题到可验证原型的路径。</p>
+          <h3>从岗位盘点到稳定承接工时</h3>
+          <p>完成 13 个支持岗位的任务与工时盘点，锁定四类占比 78.1% 的核心任务；资料问答、数据盯盘与加白校验进入一线后，自动化工作流覆盖运营团队 10% 重复性工作。</p>
         </div>
         <div class="workflow-steps">
           <div class="workflow-step reveal">
             <div class="step-index">01</div>
-            <div><strong>需求分析</strong><span>定位代理商、销售、客户侧高频问题与运营卡点</span></div>
+            <div><strong>盘点基线</strong><span>拆解 13 个岗位，定位高频任务与业务边界</span></div>
           </div>
           <div class="workflow-step reveal">
             <div class="step-index">02</div>
-            <div><strong>策略建模</strong><span>用 Claude Code / Codex 辅助分析、文档和脚本产出</span></div>
+            <div><strong>工作流上线</strong><span>340 条资料入仓，三类能力进入一线支持</span></div>
           </div>
           <div class="workflow-step reveal">
             <div class="step-index">03</div>
-            <div><strong>落地闭环</strong><span>形成 SOP、数据看板、训练营机制与自动化运营抓手</span></div>
+            <div><strong>采用验证</strong><span>按实际承接工时判断是否继续扩大自动化范围</span></div>
           </div>
         </div>
       </div>
@@ -2274,7 +2490,7 @@ body {
           <div class="section-label">Experience</div>
           <h2 class="section-title">工作经历</h2>
         </div>
-        <p class="section-copy">从甲方投放优化到媒体商业化，再到支付宝广告生态，经历覆盖行业运营、代理经营、产研协同、认证体系与 AI 学习平台原型。</p>
+        <p class="section-copy">从甲方投放优化到媒体商业化，再到支付宝广告生态，经历覆盖 AI 自动化工作流、投放平台产品、代理经营与认证体系。</p>
       </div>
 
       <div class="timeline">
@@ -2282,11 +2498,42 @@ body {
           <div class="timeline-top">
             <div>
               <div class="timeline-company">支付宝（中国）网络技术有限公司</div>
-              <div class="timeline-role">渠道生态运营</div>
+              <div class="timeline-role">渠道生态运营｜AI 自动化工作流 / 投放平台产品 / 支持提效</div>
             </div>
             <div class="timeline-date">2023.09 — 至今</div>
           </div>
-          <div class="timeline-cards">
+          <div class="timeline-highlights" aria-label="支付宝重点成果">
+            <div class="timeline-highlight"><strong>10%</strong><span>覆盖运营团队重复性工作</span></div>
+            <div class="timeline-highlight"><strong>18 项</strong><span>上半年推动上线的平台产品</span></div>
+            <div class="timeline-highlight"><strong>205%</strong><span>广告优化师认证项目总目标完成率</span></div>
+          </div>
+          <div class="experience-projects" aria-label="2026 上半年新增项目成果">
+            <article class="experience-project">
+              <span class="experience-project-kicker">2026 H1 · Automation</span>
+              <h3>支持自动化工作流</h3>
+              <p>把部门资料库、数据盯盘和对话式加白接入一线支持；不是只看能力是否上线，而是用岗位工时判断实际承接。</p>
+              <div class="experience-project-metrics">
+                <div class="experience-project-metric"><strong>340</strong><span>条业务资料入仓</span></div>
+                <div class="experience-project-metric"><strong>13</strong><span>个岗位逐项盘点</span></div>
+                <div class="experience-project-metric"><strong>78.1%</strong><span>四类核心任务占比</span></div>
+                <div class="experience-project-metric"><strong>10%</strong><span>覆盖运营团队重复性工作</span></div>
+              </div>
+            </article>
+            <article class="experience-project">
+              <span class="experience-project-kicker">2026 H1 · Ad Products</span>
+              <h3>代理需求洞察与投放平台产品</h3>
+              <p>以 42 份问卷、13 天 334 条群问题、9 家头部调研和 80 条跨期反馈判断需求广度、频率、深度与采用；上半年跟进 20 次产品上新 / 升级，去重后推动 18 项平台产品上线。</p>
+              <div class="experience-project-metrics">
+                <div class="experience-project-metric"><strong>42 / 27</strong><span>问卷 / 覆盖代理</span></div>
+                <div class="experience-project-metric"><strong>18 项</strong><span>上半年推动上线的平台产品</span></div>
+                <div class="experience-project-metric"><strong>50%</strong><span>ROI 批量调整效率提升（测试）</span></div>
+                <div class="experience-project-metric"><strong>2 分钟</strong><span>智能诊断处理耗时（原约 15 分钟）</span></div>
+              </div>
+            </article>
+          </div>
+          <details class="experience-details">
+            <summary>展开认证、行业增长、广告基建与风控成果</summary>
+            <div class="timeline-cards">
             <div class="timeline-card wide">
               <div class="timeline-card-header">
                 <span class="timeline-card-title">广告优化师认证体系建设与 AI 学习中心原型</span>
@@ -2342,7 +2589,8 @@ body {
                 <li>代理运营：明确业务定位整合资源，助代理构建支付宝广告生态经营能力</li>
               </ul>
             </div>
-          </div>
+            </div>
+          </details>
         </article>
 
         <article class="timeline-item reveal">
@@ -2353,7 +2601,14 @@ body {
             </div>
             <div class="timeline-date">2019.07 — 2023.07</div>
           </div>
-          <div class="timeline-cards">
+          <div class="timeline-highlights" aria-label="字节跳动重点成果">
+            <div class="timeline-highlight"><strong>111%</strong><span>代理年度业绩增长</span></div>
+            <div class="timeline-highlight"><strong>5% → 17%</strong><span>ROI 直投渗透率</span></div>
+            <div class="timeline-highlight"><strong>70% → 78%</strong><span>MKT 工具渗透率</span></div>
+          </div>
+          <details class="experience-details">
+            <summary>展开完整项目与数据</summary>
+            <div class="timeline-cards">
             <div class="timeline-card wide">
               <div class="timeline-card-header">
                 <span class="timeline-card-title">综合代理运营</span>
@@ -2393,7 +2648,8 @@ body {
                 <li>产出行业通案、优化资料、行业分析等全体系资料</li>
               </ul>
             </div>
-          </div>
+            </div>
+          </details>
         </article>
 
         <article class="timeline-item reveal">
@@ -2404,7 +2660,14 @@ body {
             </div>
             <div class="timeline-date">2017.06 — 2019.06</div>
           </div>
-          <div class="timeline-cards">
+          <div class="timeline-highlights" aria-label="欧派家居重点成果">
+            <div class="timeline-highlight"><strong>↓35%</strong><span>2018 上半年投放成本</span></div>
+            <div class="timeline-highlight"><strong>↑338%</strong><span>同期平均投放量</span></div>
+            <div class="timeline-highlight"><strong>全链路</strong><span>投放、创意与页面营销</span></div>
+          </div>
+          <details class="experience-details">
+            <summary>展开完整项目与数据</summary>
+            <div class="timeline-cards">
             <div class="timeline-card wide">
               <div class="timeline-card-header">
                 <span class="timeline-card-title">广告投放优化 · 全链路数据追踪</span>
@@ -2417,7 +2680,8 @@ body {
                 <li>2018上半年：成本 <span class="green">↓35%</span>（投放量平均 ↑338%）</li>
               </ul>
             </div>
-          </div>
+            </div>
+          </details>
         </article>
       </div>
     </section>
@@ -2455,7 +2719,7 @@ body {
         </div>
         <aside class="portfolio-demo" aria-label="已上线产品截图">
           <figure class="demo-shot production">
-            <img src="assets/zhichong-live-production.jpg" alt="知宠健康已上线产品截图，包含首页、在线问诊和我的页面">
+            <img src="assets/zhichong-live-production.jpg" alt="知宠健康已上线产品截图，包含首页、在线问诊和我的页面" loading="lazy" decoding="async">
             <figcaption>新版上线样式</figcaption>
           </figure>
           <div class="demo-strip">
@@ -2479,55 +2743,43 @@ body {
         <div class="skill-category reveal">
           <h3>AI 工作流与 Copilot 原型</h3>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">Claude Code — 运营工作流与策略分析</span><span class="skill-value">熟练</span></div>
-            <div class="skill-bar"><div class="skill-fill accent" style="width:90%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">业务问题拆解 — 运营场景与策略分析</span><span class="skill-value">项目实操</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">Codex — 自动化脚本与轻量 MVP</span><span class="skill-value">掌握</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">轻量 MVP — Codex / Claude Code / 自动化脚本</span><span class="skill-value">项目实操</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">AI 数据分析 — 智能洞察与决策辅助</span><span class="skill-value">熟练</span></div>
-            <div class="skill-bar"><div class="skill-fill accent" style="width:88%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">AI 数据分析 — 转化漏斗、行为分析与复盘</span><span class="skill-value">认证项目</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">知识库结构设计 — 标准回复与人工兜底</span><span class="skill-value">熟练</span></div>
-            <div class="skill-bar"><div class="skill-fill accent" style="width:92%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">知识库结构 — 问题分类、回复规则与人工兜底</span><span class="skill-value">41 家群聊</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">Prompt 流程设计 — 任务拆解与结果校验</span><span class="skill-value">掌握</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">Prompt 流程 — 任务拆解、结果校验与 SOP</span><span class="skill-value">可复用</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">AI 内容生产 — 投放素材与文案辅助</span><span class="skill-value">熟练</span></div>
-            <div class="skill-bar"><div class="skill-fill green" style="width:85%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">AI 内容生产 — 课程、投放素材与文案辅助</span><span class="skill-value">工作流</span></div>
           </div>
         </div>
         <div class="skill-category reveal">
           <h3>专业运营能力</h3>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">广告平台 · 效果全链路策略</span><span class="skill-value">95%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">广告平台 · 效果全链路策略</span><span class="skill-value">9 年</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">行业 SOP 沉淀 · 方法论输出</span><span class="skill-value">92%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">行业 SOP 沉淀 · 方法论输出</span><span class="skill-value">10+ 份</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">跨部门统筹 · 资源协同</span><span class="skill-value">90%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">代理生态 · 渠道经营与客户增长</span><span class="skill-value">30+ 代理</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">数据分析 · Thinkcell / Excel</span><span class="skill-value">88%</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">培训认证 · 机制搭建与运营复盘</span><span class="skill-value">400+ 人次</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">PPT · ThinkCell</span><span class="skill-value">熟练</span></div>
-            <div class="skill-bar"><div class="skill-fill green" style="width:90%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">产研协同 · 广告基建与流程落地</span><span class="skill-value">10+ 项目</span></div>
           </div>
           <div class="skill-item">
-            <div class="skill-item-header"><span class="skill-name">BI 数据</span><span class="skill-value">熟练</span></div>
-            <div class="skill-bar"><div class="skill-fill green" style="width:82%"></div></div>
+            <div class="skill-item-header"><span class="skill-name">数据表达 · Excel / BI / ThinkCell</span><span class="skill-value">业务复盘</span></div>
           </div>
         </div>
       </div>
@@ -2612,7 +2864,7 @@ body {
         <div class="contact-info">
           <div class="contact-item">
             <span class="contact-label">电话</span>
-            <span class="contact-value">18819427472</span>
+            <a class="contact-value" href="tel:18819427472">18819427472</a>
           </div>
           <div class="contact-item">
             <span class="contact-label">微信</span>
@@ -2620,7 +2872,7 @@ body {
           </div>
           <div class="contact-item">
             <span class="contact-label">邮箱</span>
-            <span class="contact-value">976738548@qq.com</span>
+            <a class="contact-value" href="mailto:976738548@qq.com">976738548@qq.com</a>
           </div>
         </div>
       </div>
