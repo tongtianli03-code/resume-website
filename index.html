@@ -6,7 +6,7 @@
 <meta name="description" content="童天立｜9年广告商业化与渠道生态经验，专注 AI 自动化工作流搭建、广告策略产品与运营流程提效。">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#eef4f8">
-<meta name="resume-build" content="2026-07-19-case-clarity-v15">
+<meta name="resume-build" content="2026-07-19-portrait-lead-scroll-v19">
 <meta property="og:type" content="website">
 <meta property="og:title" content="童天立｜AI 自动化工作流与广告策略产品">
 <meta property="og:description" content="把9年广告商业化经验沉淀为可复用的 AI 自动化工作流、Copilot 原型与运营闭环。">
@@ -3119,113 +3119,22 @@ body {
 .capability-toolrail span { display: block; margin-bottom: 5px; color: var(--highlight); font-family: var(--font-display); font-size: 8px; font-weight: 800; letter-spacing: .12em; }
 .capability-toolrail p { color: rgba(11,13,15,.58); font-size: 11px; line-height: 1.55; }
 
-.portrait-story {
-  display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(300px, .82fr);
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  height: 680px;
-  margin: 0 0 20px;
-}
-
-.portrait-frame {
-  position: relative;
-  overflow: hidden;
-  min-width: 0;
-  min-height: 0;
-  border: 1px solid rgba(255,255,255,.7);
-  border-radius: 28px;
-  background: #d7e0e5;
-}
-
-.portrait-primary,
-.portrait-travel { grid-row: 1 / -1; }
-
-.portrait-frame picture,
-.portrait-frame img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.portrait-frame img {
-  object-fit: cover;
-  filter: saturate(.82) contrast(1.01);
-  transition: transform 1.1s cubic-bezier(.22,1,.36,1), filter .5s ease;
-}
-
-.portrait-primary img { object-position: center 36%; }
-.portrait-travel img { object-position: center 42%; }
-
-.portrait-frame::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 48%, rgba(7,10,11,.74) 100%);
-  pointer-events: none;
-}
-
-.portrait-frame figcaption {
-  position: absolute;
-  right: 24px;
-  bottom: 22px;
-  left: 24px;
-  z-index: 1;
-  color: #f6f3ed;
-}
-
-.portrait-frame figcaption span {
-  display: block;
-  margin-bottom: 7px;
-  color: rgba(246,243,237,.58);
-  font-family: var(--font-display);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: .14em;
-}
-
-.portrait-frame figcaption strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: clamp(16px, 2vw, 25px);
-  line-height: 1.25;
-}
-
-.portrait-primary figcaption { right: 34px; bottom: 32px; left: 34px; }
-.portrait-primary figcaption strong { font-size: clamp(24px, 3vw, 40px); }
-
-.portrait-frame:hover img {
-  transform: scale(1.035);
-  filter: saturate(.96) contrast(1.02);
-}
-
 .life-sequence {
   margin: 14px 0 20px;
-  padding: 14px;
+  padding: 14px 0 12px;
+  overflow: hidden;
+  scroll-margin-top: 88px;
   border: 1px solid rgba(255,255,255,.68);
   border-radius: 32px;
   background: rgba(248,251,253,.5);
 }
-
-.life-gallery .portrait-story {
-  height: 460px;
-  margin: 0 0 10px;
-  gap: 10px;
-}
-
-.life-gallery .life-mosaic {
-  height: 500px;
-}
-
-.life-gallery .portrait-frame,
-.life-gallery .life-shot { border-radius: 22px; }
 
 .life-sequence-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 20px;
-  padding: 8px 8px 16px;
+  padding: 8px 22px 18px;
 }
 
 .life-sequence-head span {
@@ -3241,59 +3150,250 @@ body {
   font-size: 12px;
 }
 
-.life-mosaic {
-  display: grid;
-  grid-template-columns: 1fr .78fr 1fr;
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  height: 560px;
+.life-scroll-viewport {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  cursor: grab;
+  touch-action: pan-x pan-y;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 3%, #000 97%, transparent 100%);
 }
 
-.life-shot {
+.life-scroll-viewport::-webkit-scrollbar { display: none; }
+.life-scroll-viewport:focus-visible { outline: 1px solid rgba(49,117,139,.52); outline-offset: -5px; }
+.life-scroll-viewport.is-dragging { cursor: grabbing; }
+.life-scroll-viewport.is-dragging .life-scroll-card { user-select: none; }
+
+.life-showcase {
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: minmax(340px,.88fr) minmax(0,1.12fr);
+  align-items: stretch;
+  gap: 12px;
+  aspect-ratio: 1.5 / 1;
+}
+
+.life-scroll-stack {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(2,minmax(0,1fr));
+  gap: 10px;
+  overflow: hidden;
+}
+
+.life-showcase .life-scroll-viewport,
+.life-showcase .life-scroll-track {
+  min-height: 0;
+  height: 100%;
+}
+
+.life-showcase .life-scroll-track { padding: 0; }
+
+.life-showcase .life-scroll-card { height: 100%; }
+
+.life-main {
   position: relative;
   min-width: 0;
   min-height: 0;
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-rows: minmax(0,1fr) auto;
   overflow: hidden;
-  border-radius: 22px;
-  background: #161a1b;
+  border-radius: 24px;
+  background: rgba(244,247,249,.94);
 }
 
-.life-shot:first-child,
-.life-shot:last-child { grid-row: 1 / -1; }
+.life-main picture {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  display: block;
+  overflow: hidden;
+  background: #ece8df;
+}
 
-.life-shot:last-child { grid-column: 3; }
-
-.life-shot picture,
-.life-shot img {
+.life-main img {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.life-shot img {
-  object-fit: cover;
-  filter: saturate(.78) contrast(1.03);
-  transition: transform 1.1s cubic-bezier(.22,1,.36,1), filter .5s ease;
+.life-main img {
+  object-fit: contain;
+  object-position: center;
+  filter: saturate(.84) contrast(1.02);
 }
 
-.life-shot:nth-child(1) img { object-position: center 62%; }
-.life-shot:nth-child(2) img { object-position: center 52%; }
-.life-shot:nth-child(3) img { object-position: center 60%; }
-.life-shot:nth-child(4) img { object-position: center 38%; }
+.life-main::before { display: none; }
 
-.life-shot::after {
+.life-main::after {
   content: '';
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
+  box-shadow: inset 0 0 0 1px rgba(11,13,15,.11);
   border-radius: inherit;
   pointer-events: none;
 }
 
-.life-shot:hover img {
+.life-main figcaption {
+  position: relative;
+  z-index: 1;
+  min-height: 88px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: #0b0d0f;
+  border-top: 1px solid rgba(11,13,15,.1);
+}
+
+.life-main figcaption span {
+  display: block;
+  color: var(--highlight);
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.life-main figcaption strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.12;
+  text-align: right;
+}
+
+.life-scroll-track {
+  width: max-content;
+  padding: 0 14px;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.life-scroll-card {
+  position: relative;
+  flex: 0 0 clamp(250px, 28vw, 380px);
+  height: clamp(190px, 20vw, 230px);
+  overflow: hidden;
+  border-radius: 22px;
+  background: #161a1b;
+}
+
+.life-scroll-card.is-wide { flex-basis: clamp(560px, 62vw, 780px); }
+.life-scroll-card.is-portrait { flex-basis: clamp(280px, 24vw, 430px); }
+.life-scroll-card.is-large-detail { flex-basis: clamp(360px, 33vw, 560px); }
+
+.life-scroll-card picture,
+.life-scroll-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.life-scroll-card img {
+  object-fit: cover;
+  filter: saturate(.82) contrast(1.02);
+  transition: transform 1.1s cubic-bezier(.22,1,.36,1), filter .5s ease;
+}
+
+.life-scroll-card.is-journey img { object-position: center 36%; }
+.life-scroll-card.is-travel img { object-position: center 42%; }
+.life-scroll-card.is-cafe-1 img { object-position: center 62%; }
+.life-scroll-card.is-cafe-2 img { object-position: center 52%; }
+.life-scroll-card.is-cafe-3 img { object-position: center 60%; }
+.life-scroll-card.is-cafe-4 img { object-position: center 38%; }
+
+.life-scroll-card::before {
+  content: attr(data-index);
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  right: 18px;
+  color: rgba(246,243,237,.66);
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.life-scroll-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 48%, rgba(7,10,11,.74) 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.14);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.life-scroll-card figcaption {
+  position: absolute;
+  z-index: 3;
+  right: 26px;
+  bottom: 24px;
+  left: 26px;
+  color: #f6f3ed;
+}
+
+.life-scroll-card figcaption span {
+  display: block;
+  margin-bottom: 7px;
+  color: rgba(246,243,237,.58);
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.life-scroll-card figcaption strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.6vw, 38px);
+  line-height: 1.16;
+}
+
+.life-scroll-card:not(.is-wide):not(.is-portrait) figcaption strong { font-size: clamp(16px,1.8vw,23px); }
+
+.life-scroll-card:hover img {
   transform: scale(1.035);
   filter: saturate(.94) contrast(1.04);
 }
+
+.life-scroll-footer {
+  padding: 13px 22px 2px;
+  display: grid;
+  grid-template-columns: auto minmax(80px,1fr) auto;
+  align-items: center;
+  gap: 16px;
+  color: rgba(11,13,15,.38);
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.life-scroll-progress {
+  position: relative;
+  height: 5px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(11,13,15,.12),rgba(11,13,15,.12)) top / 100% 1px no-repeat,
+    linear-gradient(rgba(11,13,15,.12),rgba(11,13,15,.12)) bottom / 100% 1px no-repeat;
+}
+.life-scroll-progress i { position: absolute; right: 0; left: 0; height: 1px; background: #31758b; transform: scaleX(.08); transform-origin: left center; }
+.life-scroll-progress i:first-child { top: 0; }
+.life-scroll-progress i:last-child { bottom: 0; }
 
 .life-sequence + .bottom-grid { margin-top: 0; }
 
@@ -4198,7 +4298,10 @@ body {
   .evidence-flow { grid-template-columns: 1fr 1fr; }
   .evidence-core { grid-column: 1 / -1; grid-row: 1; width: min(520px, 100%); }
   .evidence-flow::before { display: none; }
-  .portrait-story { height: 600px; grid-template-columns: minmax(0, 1.08fr) minmax(250px, .92fr); }
+  .life-scroll-card { height: 210px; }
+  .life-scroll-card.is-wide { flex-basis: min(700px,72vw); }
+  .life-scroll-card.is-portrait { flex-basis: min(360px,38vw); }
+  .life-scroll-card.is-large-detail { flex-basis: min(420px,46vw); }
   .capability-system { grid-template-columns: 1fr; }
   .capability-evidence { min-height: 420px; }
   .interest-editorial { grid-template-columns: minmax(230px,.75fr) minmax(0,1.25fr); }
@@ -4267,26 +4370,26 @@ body {
   .evidence-core-copy strong { font-size: 21px; }
   .method-reuse { grid-template-columns: 1fr; gap: 8px; }
   .method-reuse i { display: none; }
-  .portrait-story { height: auto; grid-template-columns: 1fr; grid-template-rows: none; gap: 10px; }
-  .portrait-primary, .portrait-travel { grid-row: auto; }
-  .portrait-primary { height: 430px; }
-  .portrait-travel { height: 360px; }
-  .portrait-frame { border-radius: 22px; }
-  .portrait-frame figcaption, .portrait-primary figcaption { right: 20px; bottom: 18px; left: 20px; }
-  .portrait-primary figcaption strong { font-size: 25px; }
-  .life-sequence { padding: 8px; border-radius: 24px; }
-  .life-sequence-head { display: block; padding: 10px 10px 14px; }
+  .life-sequence { padding: 8px 0; border-radius: 24px; }
+  .life-sequence-head { display: block; padding: 10px 16px 14px; }
   .life-sequence-head p { margin-top: 6px; }
-  .life-gallery .portrait-story { height: auto; margin-bottom: 8px; }
-  .life-gallery .life-mosaic { height: auto; }
-  .life-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 360px 250px 320px; height: auto; gap: 8px; }
-  .life-shot:first-child { grid-column: 1; grid-row: 1; }
-  .life-shot:nth-child(2) { grid-column: 2; grid-row: 1; }
-  .life-shot:nth-child(3) { grid-column: 1 / -1; grid-row: 2; }
-  .life-shot:last-child { grid-column: 1 / -1; grid-row: 3; }
-  .life-shot { border-radius: 17px; }
-  .life-shot:nth-child(3) img { object-position: center 58%; }
-  .life-shot:nth-child(4) img { object-position: center 33%; }
+  .life-showcase { padding: 0 8px; grid-template-columns: 1fr; gap: 8px; aspect-ratio: auto; }
+  .life-main { height: auto; border-radius: 18px; }
+  .life-main picture { height: auto; aspect-ratio: 3 / 4; }
+  .life-main figcaption { min-height: 0; padding: 15px 16px; display: block; }
+  .life-main figcaption span { margin-bottom: 7px; }
+  .life-main figcaption strong { font-size: 23px; text-align: left; }
+  .life-scroll-viewport { -webkit-mask-image: none; mask-image: none; }
+  .life-scroll-stack { height: 368px; }
+  .life-scroll-track { padding: 0 8px; gap: 8px; }
+  .life-scroll-card { flex-basis: min(68vw,290px); height: 180px; border-radius: 17px; }
+  .life-scroll-card.is-wide { flex-basis: min(88vw,410px); }
+  .life-scroll-card.is-portrait { flex-basis: min(76vw,350px); }
+  .life-scroll-card.is-large-detail { flex-basis: min(82vw,390px); }
+  .life-scroll-card figcaption { right: 18px; bottom: 18px; left: 18px; }
+  .life-scroll-card figcaption strong { font-size: 23px; }
+  .life-scroll-card:not(.is-wide):not(.is-portrait) figcaption strong { font-size: 18px; }
+  .life-scroll-footer { padding: 12px 16px 2px; }
   .capability-system { padding: 8px; border-radius: 26px; }
   .capability-map { height: auto; padding: 190px 8px 8px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; border-radius: 20px; }
   .capability-lines { display: none; }
@@ -4334,8 +4437,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .case-beat, .visual-stage { transition: none; }
   .adoption-ring, .evidence-math .math-spiral { animation: none; }
-  .portrait-frame img { transition: none; }
-  .life-shot img { transition: none; }
+  .life-scroll-card img { transition: none; }
+  .life-scroll-progress i { transition: none; }
 }
 </style>
 </head>
@@ -4920,47 +5023,64 @@ body {
           <span>VISUAL LIFE NOTES · 2024—2026</span>
           <p>成长、旅行与片刻停留，共同构成我理解真实体验的方式。</p>
         </div>
-        <div class="portrait-story" aria-label="成长与旅行影像">
-        <figure class="portrait-frame portrait-primary">
-          <picture>
-            <source media="(max-width: 640px)" srcset="personal-journey-sm.jpg">
-            <img src="personal-journey.jpg" alt="童天立成长旅程主题个人视觉照" loading="lazy" decoding="async">
-          </picture>
-          <figcaption><span>THE JOURNEY OF GROWTH</span><strong>不断理解，也不断重构。</strong></figcaption>
-        </figure>
-        <figure class="portrait-frame portrait-travel">
-          <picture>
-            <source media="(max-width: 640px)" srcset="takamatsu-portrait-sm.jpg">
-            <img src="takamatsu-portrait.jpg" alt="童天立在日本高松旅行时的照片" loading="lazy" decoding="async">
-          </picture>
-          <figcaption><span>TAKAMATSU · 2024</span><strong>保持好奇，走进现场。</strong></figcaption>
-        </figure>
+        <div class="life-showcase">
+          <figure class="life-main is-journey" data-index="01 / 06">
+            <picture>
+              <source media="(max-width: 640px)" srcset="personal-journey-sm.jpg">
+              <img src="personal-journey.jpg" alt="童天立成长旅程主题个人视觉照" loading="lazy" decoding="async">
+            </picture>
+            <figcaption><span>THE JOURNEY OF GROWTH</span><strong>不断理解，也不断重构。</strong></figcaption>
+          </figure>
+          <div class="life-scroll-stack">
+            <div class="life-scroll-viewport is-travel-stream" data-life-scroller data-direction="1" data-speed="15" tabindex="0" role="region" aria-label="可拖拽浏览的旅行与空间影像，自动向左滚动">
+              <div class="life-scroll-track">
+              <figure class="life-scroll-card is-portrait is-travel" data-index="02 / 06">
+                <picture>
+                  <source media="(max-width: 640px)" srcset="takamatsu-portrait-sm.jpg">
+                  <img src="takamatsu-portrait.jpg" alt="童天立在日本高松旅行时的照片" loading="lazy" decoding="async">
+                </picture>
+                <figcaption><span>TAKAMATSU · 2024</span><strong>保持好奇，走进现场。</strong></figcaption>
+              </figure>
+              <figure class="life-scroll-card is-cafe-1" data-index="03 / 06">
+                <picture>
+                  <source media="(max-width: 640px)" srcset="assets/life-feishu-1-sm.jpg">
+                  <img src="assets/life-feishu-1.jpg" alt="窗边咖啡馆中的人物剪影" loading="lazy" decoding="async">
+                </picture>
+                <figcaption><span>WINDOW STUDY</span><strong>窗边与停留。</strong></figcaption>
+              </figure>
+              <figure class="life-scroll-card is-cafe-2" data-index="04 / 06">
+                <picture>
+                  <source media="(max-width: 640px)" srcset="assets/life-feishu-2-sm.jpg">
+                  <img src="assets/life-feishu-2.jpg" alt="咖啡馆窗景与室内空间" loading="lazy" decoding="async">
+                </picture>
+                <figcaption><span>LIGHT / SPACE</span><strong>看见空间的光。</strong></figcaption>
+              </figure>
+              </div>
+            </div>
+            <div class="life-scroll-viewport is-details" data-life-scroller data-direction="-1" data-speed="12" tabindex="0" role="region" aria-label="可拖拽浏览的生活细节影像，自动向右滚动">
+              <div class="life-scroll-track">
+              <figure class="life-scroll-card is-large-detail is-cafe-3" data-index="05 / 06">
+                <picture>
+                  <source media="(max-width: 640px)" srcset="assets/life-feishu-3-sm.jpg">
+                  <img src="assets/life-feishu-3.jpg" alt="咖啡、甜点与木桌的生活细节" loading="lazy" decoding="async">
+                </picture>
+                <figcaption><span>DAILY DETAIL</span><strong>记录真实的细节。</strong></figcaption>
+              </figure>
+              <figure class="life-scroll-card is-large-detail is-cafe-4" data-index="06 / 06">
+                <picture>
+                  <source media="(max-width: 640px)" srcset="assets/life-feishu-4-sm.jpg">
+                  <img src="assets/life-feishu-4.jpg" alt="童天立在咖啡馆的自然肖像" loading="lazy" decoding="async">
+                </picture>
+                <figcaption><span>NATURAL PORTRAIT</span><strong>留在自然状态里。</strong></figcaption>
+              </figure>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="life-mosaic">
-          <figure class="life-shot">
-            <picture>
-              <source media="(max-width: 640px)" srcset="assets/life-feishu-1-sm.jpg">
-              <img src="assets/life-feishu-1.jpg" alt="窗边咖啡馆中的人物剪影" loading="lazy" decoding="async">
-            </picture>
-          </figure>
-          <figure class="life-shot">
-            <picture>
-              <source media="(max-width: 640px)" srcset="assets/life-feishu-2-sm.jpg">
-              <img src="assets/life-feishu-2.jpg" alt="咖啡馆窗景与室内空间" loading="lazy" decoding="async">
-            </picture>
-          </figure>
-          <figure class="life-shot">
-            <picture>
-              <source media="(max-width: 640px)" srcset="assets/life-feishu-3-sm.jpg">
-              <img src="assets/life-feishu-3.jpg" alt="咖啡、甜点与木桌的生活细节" loading="lazy" decoding="async">
-            </picture>
-          </figure>
-          <figure class="life-shot">
-            <picture>
-              <source media="(max-width: 640px)" srcset="assets/life-feishu-4-sm.jpg">
-              <img src="assets/life-feishu-4.jpg" alt="童天立在咖啡馆的自然肖像" loading="lazy" decoding="async">
-            </picture>
-          </figure>
+        <div class="life-scroll-footer" aria-hidden="true">
+          <span>STATIC LEAD / DUAL STREAM</span>
+          <div class="life-scroll-progress"><i data-life-progress="0"></i><i data-life-progress="1"></i></div>
+          <span>02 — 06</span>
         </div>
       </div>
       <div class="bottom-grid">
@@ -5222,6 +5342,139 @@ capabilityNodes.forEach((node) => {
 });
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+const lifeScrollers = [...document.querySelectorAll('[data-life-scroller]')];
+const lifeProgressBars = [...document.querySelectorAll('[data-life-progress]')];
+
+lifeScrollers.forEach((lifeScroller, lifeIndex) => {
+  const lifeTrack = lifeScroller.querySelector('.life-scroll-track');
+  const lifeProgress = lifeProgressBars[lifeIndex];
+  if (!lifeTrack) return;
+
+  const lifeDirection = Number(lifeScroller.dataset.direction) || 1;
+  const lifeSpeed = Number(lifeScroller.dataset.speed) || 16;
+  const originalLifeCards = [...lifeTrack.children];
+  originalLifeCards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('[id]').forEach((element) => element.removeAttribute('id'));
+    clone.querySelectorAll('img').forEach((image) => image.setAttribute('alt', ''));
+    lifeTrack.appendChild(clone);
+  });
+
+  let lifeIsDragging = false;
+  let lifePointerId = null;
+  let lifeDragStartX = 0;
+  let lifeDragStartScroll = 0;
+  let lifePauseUntil = 0;
+  let lifeAutoRemainder = 0;
+  let lifePreviousFrame = performance.now();
+
+  const getLifeLoopWidth = () => lifeTrack.scrollWidth / 2;
+
+  const normalizeLifeScroll = () => {
+    const loopWidth = getLifeLoopWidth();
+    if (loopWidth <= 1) return;
+    if (lifeScroller.scrollLeft >= loopWidth) lifeScroller.scrollLeft -= loopWidth;
+    if (lifeScroller.scrollLeft <= 0) lifeScroller.scrollLeft += loopWidth;
+  };
+
+  const updateLifeProgress = () => {
+    if (!lifeProgress) return;
+    const loopWidth = getLifeLoopWidth();
+    const rawProgress = loopWidth > 0 ? (lifeScroller.scrollLeft % loopWidth) / loopWidth : 0;
+    const progress = lifeDirection > 0 ? rawProgress : 1 - rawProgress;
+    lifeProgress.style.transform = `scaleX(${Math.max(.08, progress)})`;
+  };
+
+  const pauseLifeScroll = (duration = 1200) => {
+    lifePauseUntil = Date.now() + duration;
+  };
+
+  lifeScroller.addEventListener('scroll', () => {
+    normalizeLifeScroll();
+    updateLifeProgress();
+  }, { passive: true });
+
+  lifeScroller.addEventListener('pointerdown', (event) => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    lifeIsDragging = true;
+    lifePointerId = event.pointerId;
+    lifeDragStartX = event.clientX;
+    lifeDragStartScroll = lifeScroller.scrollLeft;
+    lifeScroller.classList.add('is-dragging');
+    lifeScroller.setPointerCapture?.(event.pointerId);
+    pauseLifeScroll(1800);
+  });
+
+  lifeScroller.addEventListener('pointermove', (event) => {
+    if (!lifeIsDragging || event.pointerId !== lifePointerId) return;
+    lifeScroller.scrollLeft = lifeDragStartScroll - (event.clientX - lifeDragStartX);
+  });
+
+  const endLifeDrag = (event) => {
+    if (!lifeIsDragging || event.pointerId !== lifePointerId) return;
+    lifeIsDragging = false;
+    lifePointerId = null;
+    lifeScroller.classList.remove('is-dragging');
+    pauseLifeScroll(1400);
+  };
+
+  lifeScroller.addEventListener('pointerup', endLifeDrag);
+  lifeScroller.addEventListener('pointercancel', endLifeDrag);
+  lifeScroller.addEventListener('touchstart', () => pauseLifeScroll(1800), { passive: true });
+  lifeScroller.addEventListener('wheel', (event) => {
+    pauseLifeScroll(1200);
+    if (!event.shiftKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+    event.preventDefault();
+    lifeScroller.scrollLeft += event.deltaY;
+  }, { passive: false });
+
+  lifeScroller.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    pauseLifeScroll(1800);
+    lifeScroller.scrollBy({
+      left: event.key === 'ArrowRight' ? Math.min(window.innerWidth * .7, 460) : -Math.min(window.innerWidth * .7, 460),
+      behavior: reducedMotion.matches ? 'auto' : 'smooth'
+    });
+  });
+
+  const animateLifeScroll = (time) => {
+    const elapsed = Math.min(time - lifePreviousFrame, 64);
+    const lifeBounds = lifeScroller.getBoundingClientRect();
+    const lifeIsVisible = lifeBounds.bottom > 0 && lifeBounds.top < window.innerHeight;
+    const shouldMove = lifeIsVisible
+      && !reducedMotion.matches
+      && !lifeIsDragging
+      && Date.now() > lifePauseUntil
+      && document.activeElement !== lifeScroller
+      && !lifeScroller.matches(':hover')
+      && !document.hidden;
+
+    if (shouldMove) {
+      lifeAutoRemainder += elapsed * (lifeSpeed / 1000) * lifeDirection;
+      if (Math.abs(lifeAutoRemainder) >= 1) {
+        const lifeStep = lifeAutoRemainder > 0 ? Math.floor(lifeAutoRemainder) : Math.ceil(lifeAutoRemainder);
+        lifeScroller.scrollLeft += lifeStep;
+        lifeAutoRemainder -= lifeStep;
+        normalizeLifeScroll();
+        updateLifeProgress();
+      }
+    }
+
+    lifePreviousFrame = time;
+    requestAnimationFrame(animateLifeScroll);
+  };
+
+  requestAnimationFrame(() => {
+    const loopWidth = getLifeLoopWidth();
+    lifeScroller.scrollLeft = lifeDirection > 0 ? 1 : Math.max(loopWidth - 1, 1);
+    updateLifeProgress();
+    requestAnimationFrame(animateLifeScroll);
+  });
+});
+
 const syncVideoMotion = () => {
   document.querySelectorAll('video[autoplay]').forEach((video) => {
     if (reducedMotion.matches) {
